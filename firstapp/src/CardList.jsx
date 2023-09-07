@@ -6,11 +6,16 @@ export default class CardList extends React.Component {
     render () {
 
         const { heroData } = this.props;
+
+        if (heroData.length === 0) {
+            return null;
+          }
         
-        return (
-            <>
+        return heroData && (
+            <ul>
             {heroData.map(hero => {
-                <Card 
+                return <Card 
+                key={hero.name}
                 name={hero.name}
                 universe={hero.universe}
                 alterego={hero.alterego}
@@ -20,7 +25,7 @@ export default class CardList extends React.Component {
                 url={hero.url}
                 ></Card>
             })}
-            </>
+            </ul>
         )
 
     }
