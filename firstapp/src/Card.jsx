@@ -5,7 +5,7 @@ export default class Alert extends React.Component {
         const { name, universe, alterego, occupation, friends, superpowers, url } = this.props;
 
         return (
-            <div className="card__wrap" key={name}>
+            <li className="card__wrap" key={name}>
                 <article className="card">
                     <h2 className="card__name">Имя: {name}</h2>
                     <p className="card__universe">Вселенная: {universe}</p>
@@ -17,7 +17,7 @@ export default class Alert extends React.Component {
                         <img src={url} alt={name} />
                     </div>
                 </article>
-            </div>
+            </li>
         );
     }
 }
