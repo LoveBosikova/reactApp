@@ -4,13 +4,10 @@ import Card from './Card'
 
 export default class CardList extends React.Component {
     render () {
-
         const { heroData } = this.props;
-
         if (heroData.length === 0) {
             return null;
-          }
-        
+        }
         return heroData && (
             <ul>
             {heroData.map(hero => {
